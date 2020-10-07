@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../cells-bfm-subheader-card.html">
+</head>
+
+<body>
+  <test-fixture id="default">
+    <template>
+      <cells-bfm-subheader-card></cells-bfm-subheader-card>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('<cells-bfm-subheader-card>', function() {
+      var el;
+
+      setup(function() {
+        el = fixture('default');
+      });
+
+      test('should have "basicContent" property equal to empty Object', function () {
+          expect(el).to.have.property('basicContent');
+          expect(el.basicContent).to.be.deep.equal({});
+          expect(el.basicContent).to.be.a('object');
+      });
+
+      test('should have "logo" property equal to String', () => {
+          assert.isString(el.logo)
+      });
+
+      test('basicContent should not be shown', (done) => {
+          flush(function () {
+              basicContent = el.shadowRoot.querySelectorAll('.basicContent');
+              expect(basicContent.length).to.be.equal(0);
+              done();
+          });
+      });
+
+      test('basicContent should be in the document', (done) => {
+          flush(function () {
+              expect(el.basicContent).not.to.be.null;
+              done();
+          });
+      });
+
+    });
+  </script>
+</body>
+
+</html>

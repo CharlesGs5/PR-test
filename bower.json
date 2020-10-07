@@ -1,0 +1,33 @@
+{
+  "name": "cells-bfm-subheader-card",
+  "version": "1.0.11",
+  "description": "A subheader card that will show account number, company, account type, currency and last update.",
+  "keywords": [
+    "i18n",
+    "web-component",
+    "subheader",
+    "card",
+    "account",
+    "type"
+  ],
+  "dependencies": {
+    "cells-i18n-behavior": "^13.1.1",
+    "polymer": "Polymer/polymer#^2.0.0",
+    "cells-st-button": "^12.0.5"
+  },
+  "devDependencies": {
+    "cells-sass": "^2.2.0",
+    "cells-demo-helper": "^12.3.7",
+    "cells-grid-template": "^12.1.2",
+    "coronita-icons": "^13.9.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^3.0.0",
+    "web-component-tester": "^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^1.0.0"
+  },
+  "main": [
+    "cells-bfm-subheader-card.html"
+  ]
+}

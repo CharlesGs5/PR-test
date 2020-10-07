@@ -1,0 +1,135 @@
+<dom-module id="cells-bfm-subheader-card-styles"><template><style>
+:host {
+  display: block;
+  box-sizing: border-box;
+  font-family: var(--cells-fontDefault, sans-serif);
+  @apply --cells-bfm-subheader-card; }
+
+:host([hidden]), [hidden] {
+  display: none !important; }
+
+*, *:before, *:after {
+  font: inherit;
+  box-sizing: inherit; }
+
+.imgView {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1.5625rem;
+  margin-top: 1.5625rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  @apply cells-bfm-subheader-card-imgView; }
+
+.firstParagraph {
+  line-height: 1.625rem;
+  @apply cells-bfm-subheader-card-firstParagraph; }
+
+.secondParagraph {
+  line-height: 1.125rem;
+  margin-top: 0.5rem;
+  @apply cells-bfm-subheader-card-secondParagraph; }
+
+.thirdParagraph {
+  line-height: 1.5rem;
+  margin-top: 0.5rem;
+  @apply cells-bfm-subheader-card-thirdParagraph; }
+
+.card {
+  display: inline-block;
+  padding: 1.5rem 0rem 0rem 1.5rem;
+  width: 90%;
+  @apply cells-bfm-subheader-card-card; }
+
+.concept, .noAccount {
+  font-size: 18px;
+  font-weight: 500;
+  @apply cells-bfm-subheader-card-concept; }
+
+.balance, .accountType, .company {
+  font-size: 15px;
+  font-weight: 300;
+  @apply cells-bfm-subheader-card-accountType; }
+
+.company {
+  font-style: italic;
+  @apply cells-bfm-subheader-card-company; }
+
+.balance {
+  float: right;
+  font-weight: 300;
+  color: var(--cells-bfm-subheader-card-balance, var(--bbva-500, #666666));
+  @apply cells-bfm-subheader-card-balance; }
+
+.balanceQuantity, .currency {
+  font-size: 20px;
+  float: right;
+  @apply cells-bfm-subheader-card-currency; }
+
+.balanceQuantity {
+  font-weight: 300;
+  color: var(--cells-bfm-subheader-card-balanceQuantity, var(--bbva-600, #121212));
+  @apply cells-bfm-subheader-card-balanceQuantity; }
+
+.update, .date {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--cells-bfm-subheader-card-update-date, var(--bbva-600, #121212));
+  @apply cells-bfm-subheader-card-update; }
+
+.reload {
+  color: var(--cells-bfm-subheader-card-reload-color, var(--bbva-medium-blue, #1973B8));
+  float: right;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: var(--cells-bfm-subheader-card-reload, var(--bbva-white, #ffffff));
+  @apply cells-bfm-subheader-card-reload; }
+
+.reload-icon {
+  -webkit-transform: scaleX(-1);
+  @apply cells-bfm-subheader-card-reload-icon; }
+
+.select {
+  bottom: 16px;
+  --cells-select-options-list-z-index: 9;
+  --cells-select-options-list-width: 476px;
+  --cells-select-options-list-height: 244px;
+  --cells-select-options-list-transform: translateX(-64px);
+  --cells-select-options-list-border-radius: 1px;
+  --cells-select-options-list-box-shadow: 0 1px 4px 0 rgba(18, 18, 18, 0.4);
+  @apply --cells-bfm-subheader-card-select; }
+
+.change {
+  --cslprivate-selected-bg-icon: none;
+  color: #666666;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 16px 0px 16px 16px;
+  background-color: white; }
+
+.option__item {
+  background-color: white;
+  padding: 0px 16px 0px 16px; }
+
+.option__item:hover {
+  background-color: #F4F4F4;
+  cursor: pointer; }
+
+.option__icon {
+  height: 30px;
+  width: 30px;
+  padding: 8px 10px 8px 0px;
+  display: inline-block; }
+
+.option__label {
+  display: inline-block;
+  color: #1973B8;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  -webkit-transform: translateY(-9px);
+          transform: translateY(-9px); }
+
+</style></template></dom-module>

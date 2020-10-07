@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Demo cells-bfm-subheader-card</title>
+    <script>
+      window.I18nMsg = {};
+      window.I18nMsg.url = '../locales';
+    </script>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../cells-demo-helper/cells-demo-helper.html">
+    <link rel="lazy-import" href="../cells-bfm-subheader-card.html">
+    <link rel="lazy-import" href="css/demo-styles.html">
+    <link rel="lazy-import" href="../cells-bfm-subheader-card.scss">
+  </head>
+  <body unresolved ontouchstart>
+    <cells-demo-helper resolution="desktop" i18n>
+      <cells-demo-case heading="Basic" description="A basic example">
+        <template>
+          <cells-bfm-subheader-card>
+            <script>
+              document.addEventListener('WebComponentsReady', function() {
+                let basicContent = {
+                  logo: '../resources/BBVA.png',
+                  concept: 'Pagos Varios',
+                  noAccount: '0074 4365 8976 0131 8945',
+                  balance: 'Saldo Disponible',
+                  accountType: 'Cuenta de Cheques',
+                  company: 'Mueblerías Troncoso SA de CV',
+                  balanceQuantity: '4,000,000.00 MXN',
+                  update: 'Última actualización: ',
+                  date: '20/Agosto/2019 18:30'
+                };
+                const activationHeader = document.querySelector(
+                  'cells-bfm-subheader-card'
+                );
+                activationHeader.basicContent = basicContent;
+              });
+            </script>
+          </cells-bfm-subheader-card>
+        </template>
+      </cells-demo-case>
+
+      <cells-demo-case heading="Demo without date" description="Without Date">
+        <template>
+          <cells-bfm-subheader-card>
+            <script>
+                document.addEventListener('WebComponentsReady', function() {
+                  let basicContent = {
+                    logo: '../resources/BBVA.png',
+                    concept: 'Pagos Varios',
+                    noAccount: '0074 4365 8976 0131 8945',
+                    balance: 'Saldo Disponible',
+                    accountType: 'Cuenta de Cheques',
+                    company: 'Mueblerías Troncoso SA de CV',
+                    balanceQuantity: '4,000,000.00 MXN'
+                  };
+                  const activationHeader = document.querySelector(
+                    'cells-bfm-subheader-card'
+                  );
+                  activationHeader.basicContent = basicContent;
+                });
+            </script>
+          </cells-bfm-subheader-card>
+        </template>
+      </cells-demo-case>
+
+      <cells-demo-case heading="Demo without balance" description="A demo without balance and currency">
+        <template>
+          <cells-bfm-subheader-card>
+            <script>
+                document.addEventListener('WebComponentsReady', function() {
+                  let basicContent = {
+                    logo: '../resources/BBVA.png',
+                    concept: 'Pagos Varios',
+                    noAccount: '0074 4365 8976 0131 8945',
+                    balance: 'Saldo Disponible',
+                    accountType: 'Cuenta de Cheques',
+                    company: 'Mueblerías Troncoso SA de CV',
+                    update: 'Última actualización: ',
+                    date: '20/Agosto/2019 18:30'
+                  };
+                  const activationHeader = document.querySelector(
+                    'cells-bfm-subheader-card'
+                  );
+                  activationHeader.basicContent = basicContent;
+                });
+            </script>
+          </cells-bfm-subheader-card>
+        </template>
+      </cells-demo-case>
+
+    </cells-demo-helper>
+  </body>
+</html>
