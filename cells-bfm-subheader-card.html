@@ -1,0 +1,77 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../cells-i18n-behavior/cells-i18n-behavior.html">
+<link rel="import" href="cells-bfm-subheader-card-styles.html">
+<link rel="import" href="../coronita-icons/coronita-icons.html">
+<link rel="import" href="../cells-grid-template/cells-grid-template-overlay.html">
+<link rel="import" href="../cells-bfm-selector/cells-select.html">
+<dom-module id="cells-bfm-subheader-card">
+  <template>
+    <style include="cells-bfm-subheader-card-styles cells-bfm-subheader-card-shared-styles cells-grid-template-styles"></style>
+    <div class="content">
+      <div class="cgt">
+        <div class="cgt-col-xs-4 cgt-col-sm-8 cgt-col-md-12 cgt-col-lg-12">
+          <img src="[[setImage(basicContent.bank)]]" alt="" class="imgView">
+          <div class="card">
+            <div class="firstParagraph">
+              <cells-select placeholder="[[placeholder]]" class="select" on-selected-changed="changes">
+                <dom-repeat items="[[listEnterprise]]" as="enterprise" items-index-as="indexEnterprise">
+                  <template>
+                    <div class="change">[[enterprise.name]]</div>
+                    <dom-repeat items="[[enterprise.account]]" as="banco" items-index-as="indexBanco">
+                      <template>
+                        <dom-repeat items="[[banco.account]]" as="balances" items-index-as="indexBalance">
+                          <template>
+                            <div data-option-account-code="[[balances.description.account]]"
+                            bank="[[banco]]"
+                            name="[[enterprise]]"
+                            index-enterprise="[[indexEnterprise]]"
+                            index-balance="[[indexBalance]]"
+                            index-banco="[[indexBanco]]"
+                            data-option-value="[[balances.description]]" 
+                            on-click="list"
+                            class="option__item">
+                            <div class="option__icon">
+                              <img src="[[setImage(banco.bank)]]" width="30" height="30">
+                            </div>
+                            <div class="option__label">
+                                [[balances.description.alias]] - [[balances.description.account]]
+                            </div>
+                            </div>
+                          </template>
+                        </dom-repeat>
+                      </template>
+                    </dom-repeat>
+                  </template>
+                </dom-repeat>
+              </cells-select>
+              <span class="balance">[[balance]]</span>
+            </div>
+
+            <div class="secondParagraph">
+              <span class="accountType">[[transform(basicContent.typeac)]]</span>
+              <span>·</span>
+              <span class="company">[[basicContent.name]]</span>
+              <span class="balanceQuantity">[[parseCommasOrPoints(basicContent.amount, 0)]]</span>
+            </div>
+
+            <div class="thirdParagraph">
+              <span class="update">[[update]]</span>
+              <span class="date">[[refresh(basicContent)]]</span>
+            </div>
+
+            <div class="reload">
+              <cells-st-button class="transparent">
+                <button class="reload" on-click="refresh">
+                  <iron-icon class="reload-icon" icon="coronita:return"></iron-icon>
+                  <span>[[basicContent.update]]</span>
+                </button>
+              </cells-st-button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script src="cells-bfm-subheader-card.js"></script>
+</dom-module>
